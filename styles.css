@@ -1,1 +1,67 @@
-/*  your css code here. If applicable */
+#grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 equal columns */
+  grid-template-rows: auto auto auto auto auto; 
+  gap: 5px;
+  height: 100vh;
+}
+
+#grid > div {
+  background: green;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Top full row */
+#grid > div:nth-child(1) {
+  grid-column: 1 / 4;
+}
+
+/* Tall left column */
+#grid > div:nth-child(2) {
+  grid-column: 1 / 2;
+  grid-row: 2 / 6;
+}
+
+/* Row 2 right side */
+#grid > div:nth-child(3) {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+#grid > div:nth-child(4) {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+/* Row 3 right side */
+#grid > div:nth-child(5) {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+#grid > div:nth-child(6) {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+
+/* Row 4 right side */
+#grid > div:nth-child(7) {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+}
+#grid > div:nth-child(8) {
+  grid-column: 3 / 4;
+  grid-row: 4 / 5;
+}
+#grid > div:nth-child(9) {
+  grid-column: 2 / 3;
+  grid-row: 5 / 6; /* stays above 10 */
+}
+
+/* Bottom spanning two columns */
+#grid > div:nth-child(10) {
+  grid-column: 2 / 4;
+  grid-row: 5 / 6;
+}
